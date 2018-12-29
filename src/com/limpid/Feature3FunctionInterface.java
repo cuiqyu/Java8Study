@@ -3,6 +3,9 @@ package com.limpid;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * java8新特性之函数型接口学习
@@ -83,6 +86,12 @@ public class Feature3FunctionInterface {
         eval(list, n -> n % 2 == 1);
         System.out.println("输出所有大于4的数");
         eval(list, n -> n > 4);
+        /**
+         * 例3：使用UnaryOperator实现一个求平方的功能
+         */
+        UnaryOperator<List<Integer>> toto =  (List<Integer> paramList) -> {return paramList.stream().map(i -> i * i).collect(Collectors.toList());};
+        List<Integer> apply = toto.apply(list);
+        System.out.println(apply);
     }
 
     public static void eval(List<Integer> list, Predicate<Integer> predicate) {
