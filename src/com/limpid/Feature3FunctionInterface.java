@@ -35,18 +35,19 @@ public class Feature3FunctionInterface {
          * 1、BiConsumer<T,U>：代表了一个接受两个输入参数的操作，并且不返回任何结果
          */
         BiConsumer<Integer, Integer> biConsumer = (Integer t, Integer u) -> {
-            System.out.println("1、BiConsumer<T,U>：代表了一个接受两个输入参数的操作，并且不返回任何结果 入参一：" + t + " 入参二：" + u);
+            System.out.println("入参一：" + t);
+            System.out.println("入参二：" + u);
         };
         biConsumer.accept(1, 2);
 
         /**
          * 2、BiFunction<T,U,R>：代表了一个接受两个输入参数的方法，并且返回一个结果
          */
-        BiFunction<Integer, Integer, Integer> biFunction = (Integer a, Integer b) -> {
-            System.out.println("2、BiFunction<T,U,R>：代表了一个接受两个输入参数的方法，并且返回一个结果 入参一：" + a + " 入参二：" + b + " 结果：" + (a + b));
+        BiFunction<Integer, Integer, Integer> addFunction = (Integer a, Integer b) -> {
             return a + b;
         };
-        biFunction.apply(1, 2);
+        Integer result = addFunction.apply(1, 2);
+        System.out.println(result);
 
         /**
          * 3、BinaryOperator<T>：代表了一个作用于于两个同类型操作符的操作，并且返回了操作符同类型的结果
