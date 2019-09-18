@@ -1,6 +1,6 @@
 package com.limpid;
 
-import org.yaml.snakeyaml.Yaml;
+//import org.yaml.snakeyaml.Yaml;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,13 +31,13 @@ public class Loadsetting {
         });
         System.out.println();
 
-        // 使用classloader读取yml配置文件
+/*        // 使用classloader读取yml配置文件
         InputStream resourceAsStream1 = classLoader.getResourceAsStream("user.yml");
         Yaml yaml = new Yaml();
         Map<String, Object> map = (Map<String, Object>) yaml.load(resourceAsStream1);
         map.keySet().stream().forEach((s) -> {
             System.out.println(map.get(s));
-        });
+        });*/
 
     }
 

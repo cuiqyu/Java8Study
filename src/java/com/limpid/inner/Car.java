@@ -4,12 +4,13 @@ import java.util.function.Supplier;
 
 /**
  * 声明汽车类
+ *
  * @auther cuiqiongyu
  * @create 2018/12/24 16:16
  */
 public class Car {
 
-    //Supplier是jdk1.8的函数型接口，这里和lamda一起使用了
+    //Supplier是jdk1.8的函数型接口，这里和lamda一起使用了123
     public static Car create(final Supplier<Car> supplier) {
         return supplier.get();
     }
